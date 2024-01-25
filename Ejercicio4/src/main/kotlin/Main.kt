@@ -10,5 +10,19 @@ fun main() {
     println()
     coche3.mostrarCoche()
     println()
+    print("Introduce el número de caballos para cambiarselos al Ford: ")
+    val caballos = readln().toInt()
+    coche3.setCaballos(caballos)
+    println("*************Nº caballos modificado*******************")
+    println()
+    print("Introduce el número de puertas para cambiarselos al Ford: ")
+
+    println("*************Nº puertas modificado******************")
+    println()
+    coche1.mostrarCoche()
+    println()
+    coche2.mostrarCoche()
+    println()
+    coche3.mostrarCoche()
 
 }

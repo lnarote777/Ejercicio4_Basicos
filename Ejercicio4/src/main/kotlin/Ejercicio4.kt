@@ -16,7 +16,7 @@ class Coche(private var color: String = "",
             private var marca: String = "",
             private var modelo: String = "",
             private var nCaballos: Int = 0,
-            var nPuertas: Int = 0,
+            private var nPuertas: Int = 0,
             private var matricula: String = ""){
 
 
