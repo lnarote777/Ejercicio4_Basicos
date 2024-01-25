@@ -12,42 +12,79 @@
 
 ·Para probar las modificaciones a los métodos anteriores, solicita al usuario el número de caballos para un coche y haz lo mismo para el número de puertas.*/
 
-class Coche(){
+class Coche(private var color: String = "",
+            private var marca: String = "",
+            private var modelo: String = "",
+            private var nCaballos: Int = 0,
+            var nPuertas: Int = 0,
+            private var matricula: String = ""){
 
-    private var color: String = ""
+
     fun getColor(): String {return color}
-    fun setColor(){
+    fun setColor(nuevoColor: String){
+        try{
+            require(nuevoColor.isNotBlank()){"No puede dejarlo en blanco." }
+            this.color = nuevoColor
+        }catch (e: Exception){
+            println(e.message)
+        }
 
     }
 
-    private var marca: String = ""
+
     fun getMarca(): String {return this.marca}
-    fun setMarca(){
-
+    fun setMarca(nuevaMarca: String){
+        try{
+            require(nuevaMarca.isNotBlank()){"No puede dejarlo en blanco." }
+            this.marca = nuevaMarca
+        }catch (e: Exception){
+            println(e.message)
+        }
     }
 
-    private var modelo: String = ""
+
     fun getModelo(): String {return this.modelo}
-    fun setModelo(){
-
+    fun setModelo(nuevoModelo: String){
+        try{
+            require(nuevoModelo.isNotBlank()){"No puede dejarlo en blanco." }
+            this.modelo = nuevoModelo
+        }catch (e: Exception){
+            println(e.message)
+        }
     }
 
-    private var nCaballos: Int = 0
+
     fun getCaballos(): Int {return this.nCaballos}
-    fun setCaballos(){
-
+    fun setCaballos(caballos:Int){
+        try{
+            require(caballos in 70..700){"El numero de caballos debe estar entre 70 y 700"}
+            this.nCaballos = caballos
+        }catch (e: Exception){
+            println(e.message)
+        }
     }
 
-    private var nPuertas: Int = 0
+
     fun getPuertas(): Int {return this.nPuertas}
-    fun setPuertas(){
-
+    fun setPuertas(puertas: Int){
+        try{
+            do {
+                require(puertas in 3..5){"El numero de puertas debe estar entre 3 y 5"}
+            }while (false)
+            this.nPuertas = puertas
+        }catch (e: Exception){
+            println(e.message)
+        }
     }
 
-    private var matricula: String = ""
-    fun getMatriculas(): String {return this.matricula}
-    fun setMatriculas(){
-
+    fun getMatricula(): String {return this.matricula}
+    fun setMatricula(nuevaMatricula: String){
+        try{
+            require(nuevaMatricula.isNotBlank()){"No puede dejarlo en blanco." }
+            this.color = nuevaMatricula
+        }catch (e: Exception){
+            println(e.message)
+        }
     }
 
 
